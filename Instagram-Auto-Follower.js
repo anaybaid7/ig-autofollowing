@@ -1,18 +1,38 @@
-// Instagram Automation Script
-
 // Constants
-const TIMEOUT_DELAY = 10000; // Delay between actions (in milliseconds)
-const SCROLL_DELAY = 300; // Delay for scrolling (in pixels)
-const BATCH_SIZE = 5; // Number of users to follow in each batch
-const MAX_ATTEMPTS = 3; // Maximum attempts to follow a user
+const TIMEOUT_DELAY = 10000;
+const SCROLL_DELAY = 300;
+const BATCH_SIZE = 5;
+const MAX_ATTEMPTS = 3;
 
 // Function to click on the "Follow" button if available
 function clickOnFollowButton(link) {
     if (link.firstChild.nodeValue === "Follow") {
         link.click();
-        return true; // Successfully followed
+        return true;
     }
-    return false; // Already followed or another state
+    return false;
+}
+
+// Function to like a post
+function likePost(post) {
+    const likeButton = post.querySelector('.like-button');
+    if (likeButton) {
+        likeButton.click();
+        return true;
+    }
+    return false;
+}
+
+// Function to comment on a post
+function commentOnPost(post, comment) {
+    const commentInput = post.querySelector('.comment-input');
+    const submitButton = post.querySelector('.comment-submit');
+    if (commentInput && submitButton) {
+        commentInput.value = comment;
+        submitButton.click();
+        return true;
+    }
+    return false;
 }
 
 // Function to scroll the followers/following dialog
@@ -22,14 +42,17 @@ async function scrollDialog(selector) {
     await timeoutPromise(TIMEOUT_DELAY);
 }
 
-// Function to follow a batch of users
-async function followBatch(start, end) {
+// Function to follow a batch of users and interact with their posts
+async function followAndInteractWithUsers(start, end) {
     for (let i = start; i < end; i++) {
         let attempts = 0;
         while (attempts < MAX_ATTEMPTS) {
-            const success = clickOnFollowButton(list[i]);
+            const user = list[i];
+            const success = clickOnFollowButton(user);
             if (success) {
                 console.log(`Successfully followed user ${i + 1}`);
+                likePost(user);
+                commentOnPost(user, "Great content!");
                 break;
             } else {
                 console.log(`Failed to follow user ${i + 1}. Retrying...`);
@@ -43,20 +66,11 @@ async function followBatch(start, end) {
 // Main automation function
 async function main() {
     for (let i = 0; i < list.length; i += BATCH_SIZE) {
-        // Refresh the list of users
         list = document.querySelectorAll('.L3NKy');
-
-        // Determine the end index for this batch
         const endIndex = Math.min(i + BATCH_SIZE, list.length);
-
-        // Follow the current batch of users
-        await followBatch(i, endIndex);
-
-        // Scroll the dialog to load more users
+        followAndInteractWithUsers(i, endIndex);
         await scrollDialog("suggested");
-
-        // Pause between batches to avoid detection
-        await timeoutPromise(TIMEOUT_DELAY * 8); // Wait longer between batches
+        await timeoutPromise(TIMEOUT_DELAY * 8); // Longer pause between batches
     }
 }
 
