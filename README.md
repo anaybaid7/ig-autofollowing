@@ -7,7 +7,7 @@ This JavaScript script offers automated Instagram follower engagement, bypassing
 In addition to the Instagram automation script, this repository includes several technical demonstrations: 
 
 # 1. Scheduled Automation Module (Python using schedule library)
-This Python script demonstrates how to schedule tasks to run at specified intervals using the schedule library. Can be used for automating recurring actions efficiently.
+This Python script demonstrates how to schedule tasks to run at specified intervals using the schedule library. It can be used for automating recurring actions efficiently.
 
 # 2. Auto-comment and Auto-like Module (Python for Instagram Automation)
 This Python script illustrates how to interact with Instagram programmatically to automate actions such as liking and commenting on posts. It provides a practical example of automating social media engagement.
@@ -20,12 +20,12 @@ The included Python code demonstrates a Flask-based user authentication system, 
 
 Feel free to explore, customize, and expand upon these demonstrations. Specific configurations and data to personalize each example are being worked upon.. :) 
 
-These technical demonstrations, coupled with the Instagram automation script form this Project portfolio. 
+These technical demonstrations and the Instagram automation script form this Project portfolio. 
 
 *************************************************************************************************************************************************************************************
 
 ## Usage: 
-Utilize this code for both the suggested page and other users' follower's dialog box, employing it in a technically succinct manner.
+Utilize this code for both the suggested page and other users' follower's dialogue box, employing it in a technically succinct manner.
 
 ### In the main "Suggested Page":
 
@@ -40,7 +40,7 @@ Utilize this code for both the suggested page and other users' follower's dialog
 FunctionMain("suggested");
 ```
 
-### In Other Peoples Followers Dialog Box: 
+### In Other People's Followers Dialog Box: 
 
 * Navigate to a webpage analogous to your Instagram profile, and subsequently, click on the "Followers" button, prompting a pop-up dialog box to appear.
   
@@ -53,7 +53,7 @@ FunctionMain("suggested");
 FunctionMain("othersfollowers");
 ```
 
-Simply execute the code by copying and pasting it into the console, then press "Enter." Keep the tab open, and it will autonomously initiate the process of following other users. If any issues arise, please promptly report them.
+Execute the code by copying and pasting it into the console, then press "Enter." Keep the tab open, and it will autonomously initiate the process of following other users. If any issues arise, please promptly report them.
 
 ## Author(s)
 Anay Baid, 2A Computer Science, University of Waterloo
