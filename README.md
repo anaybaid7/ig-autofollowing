@@ -2,39 +2,7 @@
 A JavaScript-based Instagram automation script for targeted follower engagement, featuring dynamic scrolling and automated following.
 
 # Possible Final Developmental Structure (Major implementation ideas): 
-
-mern-stack-app/
-├── client/
-│ ├── src/
-│ │ ├── components/
-│ │ │ ├── Auth/
-│ │ │ │ ├── Login.js
-│ │ │ │ ├── Register.js
-│ │ │ │ ├── Profile.js
-│ │ │ │ ├── ResetPassword.js
-│ │ │ ├── Dashboard.js
-│ │ │ ├── Navbar.js
-│ │ │ ├── ...
-│ │ ├── App.js
-│ │ ├── index.js
-├── server/
-│ ├── controllers/
-│ │ ├── auth.js
-│ │ ├── user.js
-│ ├── models/
-│ │ ├── User.js
-│ ├── routes/
-│ │ ├── auth.js
-│ │ ├── user.js
-│ ├── config/
-│ │ ├── keys.js
-│ ├── middleware/
-│ │ ├── auth.js
-│ ├── app.js
-├── config/
-│ ├── default.json
-├── package.json
-├── .env
+<img width="435" alt="Screenshot 2023-10-16 at 7 50 19 PM" src="https://github.com/anaybaid7/ig-autofollowing/assets/72332988/cefbe85c-b24a-4ebd-91ac-61410ac22479">
 
 # Objective and Ideative Expansion
 This JavaScript script offers automated Instagram follower engagement, bypassing restrictions on traditional bots. It enables automated following to boost your follower count organically and efficiently.
