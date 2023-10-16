@@ -18,7 +18,6 @@ from flask_mail import Mail
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
-# Configuration for SQLite database and Flask-Mail
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['MAIL_SERVER'] = 'smtp.example.com'
@@ -39,7 +38,6 @@ login_manager.login_view = "login"
 mail = Mail(app)
 bcrypt = Bcrypt(app)
 
-# Token serializer for password reset
 serializer = URLSafeTimedSerializer(app.config['SECRET_KEY'])
 
 class RegistrationForm(FlaskForm):
